@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+    <h1>la liste des potins arrive bientôt! clique sur le lien suivant pour acceder aux potins !</h1>
+
+
+<a class="btn btn-primary" href="/new" role="button">Nouveau potin !</a>
+
+  </body>
+</html>
+
+   <h2> Voici les potins !</h2>
+<% Gossip.all.each do |gossip| %>
+        <p>
+          <%= gossip.title %><br/>
+          <%= gossip.content %>
+        </p>
+      <% end %>
