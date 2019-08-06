@@ -10,10 +10,21 @@ require 'faker'
 puts '***** Je nettoie les DB'
 
 Gossip.destroy_all
+User.destroy_all
 
 5.times do
   Gossip.create!(
     title: Faker::Job.title,
     content: Faker::Movies::VForVendetta.speech,
+  )
+end
+
+5.times do
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    description: Faker::Quote.matz,
+    email: Faker::Internet.email,
+    age: rand(18..80),
   )
 end
